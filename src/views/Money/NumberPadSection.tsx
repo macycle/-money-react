@@ -32,27 +32,27 @@ const NumberPadSection =styled.section`
             }
 
             &:nth-child(1){
-                background:#f2f2f2
+                background:#b3bcf0
             }
 
             &:nth-child(2),&:nth-child(5) {
-                background:#E0E0E0;
+                background:#a6b1ed;
             }
 
             &:nth-child(3),&:nth-child(6),&:nth-child(9) {
-                background:#D3D3D3;
+                background:#99a5eb;
             }
 
             &:nth-child(4),&:nth-child(7),&:nth-child(10) {
-                background:#C1C1C1;
+                background:#8d9ae8;
             }
 
             &:nth-child(8),&:nth-child(11),&:nth-child(13) {
-                background:#B8B8B8;
+                background:#808fe6;
             }
 
-            &:nth-child(12) {background:#9A9A9A;}
-            &:nth-child(14) {background:#A9A9A9;}
+            &:nth-child(12) {background:#6678e1;}
+            &:nth-child(14) {background:#7384e3;}
         }
     }
 
