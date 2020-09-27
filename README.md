@@ -1,44 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 自动导入制定目录下的svg
 
-## Available Scripts
+#### 1.安装依赖
 
-In the project directory, you can run:
+```js
+   yarn add svg-sprite-loader
+   yarn add svgo-loader
+```
 
-### `yarn start`
+#### 2.封装成为一个组件
+新建一个Icons组件
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```js
+import React from 'react';
+import x from '../icons/home.svg'
+console.log(x)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+type Props = {
+    name: string
+  }
 
-### `yarn test`
+function Icon(props: Props){
+    return(
+        <svg className="icon">
+            <use xlinkHref={'#' + props.name}/>
+        </svg>
+    )
+}
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default Icon;
+```
 
-### `yarn build`
+需要手动导入icons的所有资源，那么可以使用自动导入的方法：
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+---Icons.js--
+    let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
+    try {importAll(require.context('../icons', true, /\.svg$/));} catch (error) {console.log(error);}
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+如果以上__WebpackModuleApi报错，那么得手动再安装一个包：
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+    yarn add @types/webpack-env --dev
+```
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+配置如上，那么就可以自动导入了。我们只要在icons目录下添加新的svg，就可以在组件中使用了。
