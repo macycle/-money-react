@@ -13,9 +13,9 @@ const NavWrapper=styled.nav`
        padding:16px 0
      }
    }
-`
+`;
 
-function Nav(){
+const Nav=()=>{
     return (
         <NavWrapper>
             <ul>
