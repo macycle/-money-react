@@ -1,10 +1,10 @@
 import React from 'react';
 import './reset.scss'
+import Nav from './components/Nav';
 import {
   HashRouter as Router,
   Switch,
   Route,
-  Redirect
 } from "react-router-dom";
 
 
