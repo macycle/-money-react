@@ -1,4 +1,4 @@
-@import-normalize;
+
 @import 'helper.scss';
 
 *{
@@ -23,4 +23,9 @@ body{
     font-family: $font-hei;
     font-size: 16px;
     line-height:1.2;    //默认行高
+}
+
+.icon{
+    width: 1em;
+    height: 1em;
 }
