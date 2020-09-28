@@ -43,7 +43,7 @@ const Nav=(props: any)=>{
         <NavWrapper>
             <ul>
                 <li>  
-                    <NavLink to="/tag" activeClassName="selected">
+                    <NavLink to="/tags" activeClassName="selected">
                         <Icon name="tag" />
                         标签
                     </NavLink>

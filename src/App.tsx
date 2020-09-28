@@ -1,5 +1,10 @@
 import React from 'react';
 import './reset.scss'
+import {Tag} from './views/Tag'
+import Money from './views/Money'
+import NoMatch from './views/Nomatch'
+import Tags from './views/Tags'
+import Statistic from './views/Statistic'
 
 import {
   HashRouter as Router,
@@ -9,25 +14,26 @@ import {
 } from "react-router-dom";
 
 
-import Money from './views/Money'
-import NoMatch from './views/Nomatch'
-import Tags from './views/Tags'
-import Statistic from './views/Statistic'
+
 
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path='/tag'>
+        <Route exact path='/tags'>
           <Tags />
         </Route>
 
-        <Route path='/money'>
+        <Route exact path='/tags/:id'>
+          <Tag />
+        </Route>
+
+        <Route exact path='/money'>
           <Money />
         </Route>
 
-        <Route path='/statistic'>
+        <Route exact path='/statistic'>
           <Statistic />
         </Route>
         <Redirect exact from="/" to="/money"/>
