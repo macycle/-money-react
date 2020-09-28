@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-
-const NotesSection = styled.section`
+import React,{useState,useRef} from 'react'
+import Icon from '../../components/Icons';
+const Wrapper = styled.section`
   background: white;
   padding: 0 16px;
   font-size: 14px;
@@ -17,5 +18,26 @@ const NotesSection = styled.section`
     }
   }
 `;
+
+const NotesSection:React.FC=(props)=>{
+
+  const [note,setNote]=useState('');
+  const InputValue=useRef<HTMLInputElement>(null)
+  const noteChange=()=>{
+    if(InputValue.current!==null){
+      setNote(InputValue.current.value)
+    }
+  }
+
+  return (
+    <Wrapper>
+      <label>
+      <Icon name="mark"/> &nbsp;
+      <span>备注：</span>
+      <input type="text" ref={InputValue} placeholder="写一点备注呀~" defaultValue={note} onBlur={noteChange}/>
+      </label>
+    </Wrapper>
+  )
+}
 
 export {NotesSection}

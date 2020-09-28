@@ -24,7 +24,8 @@ const Wrapper = styled.section`
             margin: 8px 12px;
 
             &.selected{
-                background:#eee;
+                background:#b08fee;
+                color:white;
             }
             
         }
@@ -38,7 +39,7 @@ const Wrapper = styled.section`
 `
 
 type Props={
-    value: string[];
+    value: string[]; 
     onChange:(selected: string[])=>void;
 }
 

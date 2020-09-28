@@ -37,10 +37,6 @@ function Money() {
             </TagsSection>
 
             <NotesSection>
-                <label>
-                <span>备注：</span>
-                <input type="text" placeholder="写一点备注呀~"/>
-                </label>
             </NotesSection>
 
             
