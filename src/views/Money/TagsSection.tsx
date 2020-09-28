@@ -16,10 +16,10 @@ const Wrapper = styled.section`
         >li {
             background: #f5f5f5;
             min-width:48px;
-            min-height:48px;
-            border-radius: 50%;
+            height:48px;
+            border-radius: 24px;
             display:block; 
-            padding:17px;
+            padding:17px 20px;
             font-size: 14px; 
             margin: 8px 12px;
 
@@ -44,7 +44,7 @@ type Props={
 }
 
 const TagsSection: React.FC<Props>=(props)=>{
-    const [tags,setTags]=useState<string[]>(['衣','食','住','行','吃','喝','拉','撒']);
+    const [tags,setTags]=useState<string[]>(['1','2','3','4','5','6','7','8']);
     const selectedItems=props.value;
     const addTag=()=>{
         const tagName=window.prompt('请输入东西:');
@@ -62,14 +62,14 @@ const TagsSection: React.FC<Props>=(props)=>{
         }
     }
 
-    const getClass=(item: string)=>selectedItems.indexOf(item)>0?"selected":'';
+    const getClass=(item: string)=>selectedItems.indexOf(item)>=0?"selected":'';
 
     return (
         <Wrapper>
             <ol>
                 {
-                    tags.map(item=>{
-                        return (<li key={item} onClick={()=>{onToggleTag(item)}} className={getClass(item)}>{item}</li>)
+                    tags.map((item,index)=>{
+                        return (<li key={item+index} onClick={()=>{onToggleTag(item)}} className={getClass(item)}>{item}</li>)
                     })
                 }
             </ol>
