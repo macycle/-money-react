@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import styled from 'styled-components';
 import {TagsSection} from './Money/TagsSection';
 import {CategorySection} from './Money/CategorySection';
-import {NotesSection} from './Money/NotesSection';
+import {NotesSection} from './Money/NotesSection'; 
 import {NumberPadSection} from './Money/NumberPadSection';
 
 const MyLayout=styled(Layout)`
@@ -26,11 +26,15 @@ function Money() {
     }
     return (
         <MyLayout>
-            <CategorySection />
+            <CategorySection value={selected.category}
+             onChange={category=>onChange({category})}
+            />
 
             <TagsSection value={selected.tags} onChange={tags => onChange({tags})} />
 
-            <NotesSection />
+            <NotesSection value={selected.note}
+             onChange={note=>onChange({note})}
+            />
 
             <NumberPadSection value={selected.amount} onChange={amount=>onChange({amount})} onOk={()=>{}} />
 

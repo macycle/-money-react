@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {Wrapper} from './NumberPadSection/Wrapper'
 import {generateOutput} from './NumberPadSection/generateOutput'
 
@@ -9,20 +9,21 @@ type Props={
 }
 
 const NumberPadSection: React.FC<Props>=(props)=>{
+    
     const output=props.value.toString();
-    const setOutput=(output: string)=>{
+    const setOutput=(output: string)=>{    //保存在当前组件；而且setOutput是一个普通的函数，不是useState的那个函数；
         let value;
         if(output.length>16){
             value=parseFloat(output.slice(0,16));
         }else if(output.length===0){
             value=0;
         }else{
-            value=parseFloat(output)
+            value=parseFloat(output);
         }
-        props.onChange(value)
+        props.onChange(value)  //通知父组件要修改参数。
     }
     const onClickButtonWrapper=(e: React.MouseEvent)=>{
-        const text=(e.target as HTMLButtonElement).textContent;
+        const text=(e.target as HTMLButtonElement).textContent as string;
 
         if(text===null){return ;}
 
@@ -31,19 +32,18 @@ const NumberPadSection: React.FC<Props>=(props)=>{
             return ;
         }
 
-        if('0123456789.'.split('').concat(['删除','清空']).indexOf(text)>0){
-            console.log(text)
+        if(['.','0','1','2','3','4','5','6','7','8','9','删除','清空'].indexOf(text) >= 0){
+           console.log(text);
             setOutput(generateOutput(text,output))
         }
     }
-
 
     return (
         <Wrapper>
             <div className="output">
                 {output}
             </div>
-            <div className="pad clearfix" onClick={onClickButtonWrapper}>
+            <div className="pad clearfix" onClick={onClickButtonWrapper}>    
                 <button>1</button>
                 <button>2</button>
                 <button>3</button>

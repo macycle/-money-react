@@ -5,6 +5,7 @@ import {
   HashRouter as Router,
   Switch,
   Route,
+  Redirect
 } from "react-router-dom";
 
 
@@ -29,7 +30,7 @@ function App() {
         <Route path='/statistic'>
           <Statistic />
         </Route>
-
+        <Redirect exact from="/" to="/money"/>
         <Route path='*'>
           <NoMatch />
         </Route>

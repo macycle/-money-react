@@ -6,13 +6,13 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     display:flex;
     flex-direction:column;
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
+    
     
 `
 
 const Main=styled.div`
-    flex-grow:1;
+    flex-grow:100;
 `
 
 

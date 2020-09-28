@@ -19,7 +19,7 @@ const Wrapper =styled.section`
             float: left;
             width:25%;
             height:64px;
-            border:none;
+            border:0;
 
             &.ok{
                 height:128px;
