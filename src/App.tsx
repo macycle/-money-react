@@ -11,7 +11,7 @@ import {
 
 import Money from './views/Money'
 import NoMatch from './views/Nomatch'
-import Tag from './views/Tag'
+import Tags from './views/Tags'
 import Statistic from './views/Statistic'
 
 
@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/tag'>
-          <Tag />
+          <Tags />
         </Route>
 
         <Route path='/money'>

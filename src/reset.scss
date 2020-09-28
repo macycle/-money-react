@@ -35,3 +35,8 @@ button {
     font-family: inherit;
   }
 
+.oneLine {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

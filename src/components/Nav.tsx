@@ -38,7 +38,7 @@ const NavWrapper=styled.nav`
    }
 `;
 
-const Nav=()=>{
+const Nav=(props: any)=>{
     return (
         <NavWrapper>
             <ul>
