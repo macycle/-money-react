@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 const NotesSection = styled.section`
-  background: #f5f5f5;
+  background: white;
   padding: 0 16px;
   font-size: 14px;
   > label {
     display:flex;
     align-items: center;
-    > span { margin-right: 16px; white-space: nowrap; }
+    > span { margin-right: 2px; white-space: nowrap; }
     > input {
       display:block;
       width: 100%;
-      height: 72px;
+      height: 32px;
       background: none;
       border: none;
     }

@@ -1,25 +1,21 @@
 import styled from 'styled-components'
 
 const CategorySection=styled.section`
-    font-size:24px;
     >ul{
         display:flex;
-        background:#c4c4c4;
+        justify-content: center;
+        align-items: center;
+        min-height:60px;
+        background:#9563f1;
         > li {
-        width: 50%; 
-        text-align:center;
-        padding: 16px 0;
-        position:relative;
-        &.selected::after{
-            content: '';
-            display:block; 
-            height: 3px;
-            background:#333;
-            position:absolute;
-            bottom:0;
-            width: 100%;
-            left: 0;
+        font-size: 20px;
+        padding: 14px;
+        border-bottom: 1px solid transparent;
+        &.selected{
+        color:white;
+        font-weight: bold;
         }
+        
     }
 }
 `

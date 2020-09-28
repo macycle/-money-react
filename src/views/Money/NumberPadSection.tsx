@@ -5,13 +5,12 @@ const NumberPadSection =styled.section`
     flex-direction:column;
 
     >.output{
-        background:white;
-        font-size:36px;
-        line-height:72px;
+        background:#f5f5f5;
+        font-size:24px;
+        line-height:24px;
         text-align:right;
-        padding:0 16px;
-        box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,0.25),
-                    inset 0 5px 5px -5px rgba(0,0,0,0.25);
+        padding:6px 16px;
+       
     }
 
     >.pad{

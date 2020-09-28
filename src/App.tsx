@@ -1,6 +1,6 @@
 import React from 'react';
 import './reset.scss'
-import Nav from './components/Nav';
+
 import {
   HashRouter as Router,
   Switch,
@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/tag'>
+        <Route exact path='/tag'>
           <Tag />
         </Route>
 
