@@ -1,16 +1,13 @@
 import React,{useState} from 'react';
-import Layout from '../components/Layout'
-import styled from 'styled-components';
 import {TagsSection} from './Money/TagsSection';
 import {CategorySection} from './Money/CategorySection';
 import {NotesSection} from './Money/NotesSection'; 
 import {NumberPadSection} from './Money/NumberPadSection';
 import {useRecords} from '../hook/useRecord'
+import {MyMain} from '../components/MyMain'
+import {MyWrapper} from '../components/MyWrapper'
+import Nav from '../components/Nav'
 
-const MyLayout=styled(Layout)`
-    display:flex;
-    flex-direction:column;
-`
 
 type Category='-' | '+'
 
@@ -36,19 +33,22 @@ function Money() {
         }
     }
     return (
-        <MyLayout>
-            <CategorySection value={selected.category}
-             onChange={category=>onChange({category})}
-            />
-            <TagsSection value={selected.tagIds} onChange={tagIds => onChange({tagIds})} />
+        <MyWrapper>
+            <MyMain>
+                <CategorySection value={selected.category}
+                onChange={category=>onChange({category})}
+                />
+                <TagsSection value={selected.tagIds} onChange={tagIds => onChange({tagIds})} />
 
-            <NotesSection value={selected.note}
-             onChange={note=>onChange({note})}
-            />
+                <NotesSection value={selected.note}
+                    onChange={note=>onChange({note})}
+                />
 
-            <NumberPadSection value={selected.amount.toString()} onChange={amount=>onChange({amount})} onOk={submit} />
-
-        </MyLayout>
+                <NumberPadSection value={selected.amount.toString()} onChange={amount=>onChange({amount})} onOk={submit} />
+            </MyMain>
+            <Nav />
+            
+        </MyWrapper>
     )
   }
 

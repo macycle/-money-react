@@ -3,9 +3,11 @@ import React from 'react';
 import {useTags} from '../../hook/useTags'
  
 const Wrapper = styled.section`
-    flex-grow:1;
+    
     background:#fff;
     padding:12px 16px;
+    overflow:auto;
+    height:41vh;
     display:flex;
     flex-direction:column;
     justify-content: flex-end;
@@ -14,6 +16,7 @@ const Wrapper = styled.section`
         margin:0 -12px;
         display:flex;
         flex-wrap:wrap;
+        overflow:auto;
         >li {
             background: #f5f5f5;
             min-width:48px;

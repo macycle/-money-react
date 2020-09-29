@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom'
 import Nav from '../components/Nav'
 import {Center} from '../components/Center'
 import {Space} from '../components/Space'
-
+import {MyMain} from '../components/MyMain'
+import {MyWrapper} from '../components/MyWrapper'
 
 const TagList=styled.ol`
     font-size:16px;
@@ -31,15 +32,8 @@ const Button=styled.button`
     color: white;
 `
 
-const MyMain = styled.div`
-  overflow:auto;
-  height:93vh;
-`
-const Wrapper = styled.div`
-    height:100%;
-    overflow:auto
-    
-`
+
+
 
 
 
@@ -47,7 +41,7 @@ const Wrapper = styled.div`
 function Tags() {
     const {tags,addTag} =useTags(); 
     return (
-        <Wrapper >
+        <MyWrapper >
           <MyMain >
               <TagList>
                 {tags.map(tag=>
@@ -71,7 +65,7 @@ function Tags() {
           </MyMain>
       
             <Nav />
-        </Wrapper>
+        </MyWrapper>
     )
   }
 

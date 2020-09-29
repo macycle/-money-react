@@ -6,7 +6,7 @@ const Wrapper=styled.section`
         display:flex;
         justify-content: center;
         align-items: center;
-        min-height:60px;
+        height:8vh;
         background:#9563f1;
         > li {
         font-size: 20px;

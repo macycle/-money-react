@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Wrapper =styled.section`
     display:flex;
     flex-direction:column;
-
+    height:40vh;
     >.output{
         background:#f5f5f5;
         font-size:24px;
@@ -18,11 +18,11 @@ const Wrapper =styled.section`
             font-size:18px;
             float: left;
             width:25%;
-            height:64px;
+            height:9vh;
             border:0;
 
             &.ok{
-                height:128px;
+                height:18vh;
                 float:right;
             }
 

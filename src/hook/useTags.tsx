@@ -11,12 +11,10 @@ const useTags=()=>{
         let localTags=JSON.parse(window.localStorage.getItem('tags') || '[]')
         if(localTags.length===0){
             localTags=[
-                {id: createId(), name: '衣'},
-                {id: createId(), name: '食'},
-                {id: createId(), name: '住'},
-                {id: createId(), name: '行'},
-                {id: createId(), name: '食'},
-                {id: createId(), name: '住'}, 
+                {id: createId(), name: '购物'},
+                {id: createId(), name: '出行'},
+                {id: createId(), name: '工资'},
+                {id: createId(), name: '住房'}, 
             ]
         }
         setTags(localTags)

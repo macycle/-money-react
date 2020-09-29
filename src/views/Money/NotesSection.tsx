@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react'
 import Icon from '../../components/Icons';
 const Wrapper = styled.section`
+  height:4vh;
   background: white;
   padding: 0 16px;
   font-size: 14px;

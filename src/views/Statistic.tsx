@@ -1,10 +1,12 @@
 import React,{ReactNode,useState} from 'react';
-import Layout from '../components/Layout'
 import {CategorySection} from './Money/CategorySection'
 import {RecordItem,useRecords} from '../hook/useRecord'
 import {useTags} from '../hook/useTags'
 import day from 'dayjs'
 import styled from 'styled-components'
+import {MyMain} from '../components/MyMain'
+import {MyWrapper} from '../components/MyWrapper'
+import Nav from '../components/Nav'
 
 const Item=styled.div`
     display:flex;
@@ -35,7 +37,7 @@ function Statistic() {
     const hash: { [K: string]: RecordItem[] } = {};    //桶排序
     const selectedRecords=records.filter(r=>r.category===category)    //遍历
 
-    selectedRecords.map(r=>{
+    selectedRecords.forEach(r=>{
         const key=day(r.createdAt).format('YYYY年MM月DD日')
         if(!(key in hash)){
             hash[key]=[];
@@ -52,36 +54,38 @@ function Statistic() {
 
 
     return (
-        <Layout>
-       
-                <CategorySection value={category}
-                onChange={value => setCategory(value)}/>
-            
-            {array.map(([date, records]) => <div>
-                <Header>
-                {date}
-                </Header>
-                <div>
-                {records.map(r => {
-                    return <Item >
-                    <div className="tags oneLine">
-                        {r.tagIds
-                        .map(tagId => <span key={tagId}>{getName(tagId)}</span>)
-                        .reduce((result, span, index, array) =>
-                            result.concat(index < array.length - 1 ? [span, '，'] : [span]), [] as ReactNode[])
-                        }
-                    </div>
-                    {r.note && <div className="note">
-                        {r.note}
-                    </div>}
-                    <div className="amount">
-                        ￥{r.amount}
-                    </div>
-                    </Item>;
-                })}
+        <MyWrapper>
+            <MyMain>
+            <CategorySection value={category}
+            onChange={value => setCategory(value)}/>
+        
+        {array.map(([date, records]) => <div>
+            <Header>
+            {date}
+            </Header>
+            <div>
+            {records.map(r => {
+                return <Item >
+                <div className="tags oneLine">
+                    {r.tagIds
+                    .map(tagId => <span key={tagId}>{getName(tagId)}</span>)
+                    .reduce((result, span, index, array) =>
+                        result.concat(index < array.length - 1 ? [span, '，'] : [span]), [] as ReactNode[])
+                    }
                 </div>
-            </div>)}
-        </Layout>
+                {r.note && <div className="note">
+                    {r.note}
+                </div>}
+                <div className="amount">
+                    ￥{r.amount}
+                </div>
+                </Item>;
+            })}
+            </div>
+        </div>)}
+            </MyMain>
+            <Nav />
+        </MyWrapper>
     //     <Layout>
     //     <CategorySection value={category}
     //     onChange={value=>setCategory(value)}
