@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {useTags} from '../../useTags'
+import {useTags} from '../../hook/useTags'
 import {createId} from '../../lib/createId'
  
 const Wrapper = styled.section`
@@ -46,9 +46,9 @@ type Props={
 }
 
 const TagsSection: React.FC<Props>=(props)=>{
-    const {tags, setTags} = useTags();
+    const {tags, addTag} = useTags();
     const selectedTagIds=props.value;
-    const {addTag}=useTags()
+    //const {addTag}=useTags()
     
     // const addTag=()=>{
     //     const tagName=window.prompt('请输入新的标签名:');

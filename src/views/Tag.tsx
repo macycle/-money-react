@@ -1,5 +1,5 @@
 import React from 'react';
-import {useTags} from '../useTags'
+import {useTags} from '../hook/useTags'
 import {useParams,useHistory} from 'react-router-dom'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
@@ -58,7 +58,7 @@ const Tag: React.FC=()=>{
                 <Space/>
                 <Space/>
                 <Space/>
-                <Button onClick={()=>{deleteTag(tag.id); console.log('ss')}}>删除标签</Button>
+                <Button onClick={()=>{deleteTag(tag.id)}}>删除标签</Button>
             </Center>
         </div>
     )

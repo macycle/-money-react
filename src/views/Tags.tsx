@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '../components/Icons'
-import {useTags} from '../useTags'
+import {useTags} from '../hook/useTags'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import Nav from '../components/Nav'
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
 
 
 function Tags() {
-    const {tags} =useTags(); 
+    const {tags,addTag} =useTags(); 
     return (
         <Wrapper >
           <MyMain >
@@ -64,7 +64,7 @@ function Tags() {
               <Space/>
               <Space/>
               <Space/>
-              <Button>新增标签</Button>
+              <Button onClick={addTag}>新增标签</Button>
               <Space/>
               <Space/>
             </Center>
