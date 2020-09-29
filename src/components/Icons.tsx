@@ -7,11 +7,12 @@ try {importAll(require.context('../icons', true, /\.svg$/));} catch (error) {con
 
 type Props = {
     name: string
-  }
+  } & React.SVGAttributes<SVGElement>
 
-function Icon(props: Props){
+const Icon: React.FC<Props>=(props)=>{
+    const {name,children,className, ...rest}=props
     return(
-        <svg className="icon">
+        <svg className="icon" {...rest} >
             <use xlinkHref={'#' + props.name}/>
         </svg>
     )

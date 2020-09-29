@@ -33,13 +33,22 @@ const useTags=()=>{
     }
 
     const deleteTag=(id:number)=>{
-        const index=findTagIndex(id);
-        const tagsClone=JSON.parse(JSON.stringify(tags));
-        tagsClone.splice(index,1);    //直接删除
-        setTags(tagsClone)
+        // const index=findTagIndex(id);
+        // const tagsClone=JSON.parse(JSON.stringify(tags));
+        // tagsClone.splice(index,1);    //直接删除
+        // setTags(tagsClone)
+
+        setTags(tags.filter(tag=>tag.id!==id))
     }
 
-    return {tags,setTags,findTag,findTagIndex,updateTag, deleteTag}
+    const addTag=()=>{
+        const tagName=window.prompt('请输入新的标签名:');
+        if(tagName!==null && tagName!==''){
+            setTags([...tags,{id:createId(),name:tagName}])
+        }
+    }
+
+    return {tags,setTags,addTag,findTag,findTagIndex,updateTag, deleteTag}
 }
 
 export {useTags}
