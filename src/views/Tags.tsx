@@ -4,6 +4,8 @@ import {useTags} from '../useTags'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import Nav from '../components/Nav'
+import {Center} from '../components/Center'
+import {Space} from '../components/Space'
 
 
 const TagList=styled.ol`
@@ -28,17 +30,6 @@ const Button=styled.button`
     background: #7c48db; border-radius: 4px;
     color: white;
 `
-
-const Center=styled.div`
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`
-
-const Space = styled.div`
-  height: 16px;
-`;
 
 const MyMain = styled.div`
   overflow:auto;
