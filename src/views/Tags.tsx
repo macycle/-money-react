@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Icon from '../components/Icons'
 import {useTags} from '../useTags'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import Layout from '../components/Layout'
+import Nav from '../components/Nav'
 
 
 const TagList=styled.ol`
@@ -40,22 +40,34 @@ const Space = styled.div`
   height: 16px;
 `;
 
+const MyMain = styled.div`
+  overflow:auto;
+  height:93vh;
+`
+const Wrapper = styled.div`
+    height:100%;
+    overflow:auto
+    
+`
+
+
 
 
 function Tags() {
     const {tags} =useTags(); 
     return (
-        <Layout>
-            <TagList>
-              {tags.map(tag=>
-                <li key={tag.id}>
-                    <Link to={'/tags/'+tag.id}>
-                      <span className="oneLine">{tag.name}</span>
-                      <Icon name='right'/>
-                    </Link>
-                </li>
-                )}
-            </TagList>
+        <Wrapper >
+          <MyMain >
+              <TagList>
+                {tags.map(tag=>
+                  <li key={tag.id}>
+                      <Link to={'/tags/'+tag.id}>
+                        <span className="oneLine">{tag.name}</span>
+                        <Icon name='right'/>
+                      </Link>
+                  </li>
+                  )}
+             </TagList>
 
             <Center>
               <Space/>
@@ -65,8 +77,10 @@ function Tags() {
               <Space/>
               <Space/>
             </Center>
-       </Layout>
-       
+          </MyMain>
+      
+            <Nav />
+        </Wrapper>
     )
   }
 

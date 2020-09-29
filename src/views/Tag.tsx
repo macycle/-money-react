@@ -9,6 +9,7 @@ const Tag:React.FC=(props)=>{
     const {findTag}=useTags();
     let {id}=useParams<Params>()
     const tag=findTag(parseInt(id))
+    
     return (
         <div>{tag.name}</div>
     )

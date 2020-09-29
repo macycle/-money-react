@@ -6,6 +6,9 @@ const defaultTags=[
     {id: createId(), name: '食'},
     {id: createId(), name: '住'},
     {id: createId(), name: '行'},
+    {id: createId(), name: '食'},
+    {id: createId(), name: '住'},
+    
 ]
 
 const useTags=()=>{

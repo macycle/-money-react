@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React,{useRef} from 'react'
+import React from 'react'
 import Icon from '../../components/Icons';
 const Wrapper = styled.section`
   background: white;
