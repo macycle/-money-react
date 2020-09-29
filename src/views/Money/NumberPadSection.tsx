@@ -10,13 +10,13 @@ type Props={
 
 const NumberPadSection: React.FC<Props>=(props)=>{
     
-    const output=props.value.toString();
+    const output=props.value;
     const setOutput=(output: string)=>{    //保存在当前组件；而且setOutput是一个普通的函数，不是useState的那个函数；
-        let value;
+        let value: string;
         if(output.length>16){
-            value=parseFloat(output.slice(0,16));
+            value=output.slice(0,16);
         }else if(output.length===0){
-            value=0;
+            value='0';
         }else{
             value=output;
         }

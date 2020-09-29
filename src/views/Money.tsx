@@ -46,7 +46,7 @@ function Money() {
              onChange={note=>onChange({note})}
             />
 
-            <NumberPadSection value={selected.amount} onChange={amount=>onChange({amount})} onOk={submit} />
+            <NumberPadSection value={selected.amount.toString()} onChange={amount=>onChange({amount})} onOk={submit} />
 
         </MyLayout>
     )

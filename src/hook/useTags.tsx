@@ -62,7 +62,12 @@ const useTags=()=>{
         }
     }
 
-    return {tags,setTags,addTag,findTag,findTagIndex,updateTag, deleteTag}
+    const getName=(id: number)=>{
+        const tag=tags.filter(t=>t.id===id)[0]
+        return tag?tag.name:'';
+    }
+
+    return {tags,setTags,getName,addTag,findTag,findTagIndex,updateTag, deleteTag}
 }
 
 export {useTags}
