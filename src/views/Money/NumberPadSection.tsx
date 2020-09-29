@@ -3,8 +3,8 @@ import {Wrapper} from './NumberPadSection/Wrapper'
 import {generateOutput} from './NumberPadSection/generateOutput'
 
 type Props={
-    value:number;
-    onChange:(value:number)=>void;
+    value:string;
+    onChange:(value:any)=>void;
     onOk?:()=>void;
 }
 
@@ -18,12 +18,12 @@ const NumberPadSection: React.FC<Props>=(props)=>{
         }else if(output.length===0){
             value=0;
         }else{
-            value=parseFloat(output);
+            value=output;
         }
         props.onChange(value)  //通知父组件要修改参数。
     }
     const onClickButtonWrapper=(e: React.MouseEvent)=>{
-        const text=(e.target as HTMLButtonElement).textContent as string;
+        const text=(e.target as HTMLButtonElement).textContent ;
 
         if(text===null){return ;}
 
