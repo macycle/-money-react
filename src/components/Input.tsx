@@ -23,7 +23,7 @@ type Props = {
 
       return(
           <Label>
-            <span>{props.label}</span>
+            <span>{label}</span>
             <input {...rest}  />
           </Label>
       )
