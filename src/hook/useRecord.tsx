@@ -20,7 +20,7 @@ const useRecords=()=>{
 
     useUpdate(()=>{    //当数据发生变化的时候获取
         window.localStorage.setItem('records',JSON.stringify(records))
-    },[records])
+    },records)
 
     const addRecord=(newRecord: newRecordItem)=>{
         if(newRecord.amount<=0){

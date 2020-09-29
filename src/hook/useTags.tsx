@@ -37,7 +37,7 @@ const useTags=()=>{
 
     useUpdate(()=>{
         window.localStorage.setItem('tags',JSON.stringify(tags))
-    },[tags])
+    },tags)
 
     const updateTag=(id: number,obj: {name:string})=>{
         const index=findTagIndex(id);    //获取想要修改的tag的下标；

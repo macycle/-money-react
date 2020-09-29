@@ -21,7 +21,7 @@ const defaultFormData={
     amount:'0'
 }
 function Money() {
-    const {records,addRecord}=useRecords()
+    const {addRecord}=useRecords()
 
     const [selected,setSelected]=useState(defaultFormData)
 
