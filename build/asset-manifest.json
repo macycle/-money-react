@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/money-trace-website/static/css/main.7b3a3e77.chunk.css",
+    "main.js": "/money-trace-website/static/js/main.29e9aff4.chunk.js",
+    "main.js.map": "/money-trace-website/static/js/main.29e9aff4.chunk.js.map",
+    "runtime-main.js": "/money-trace-website/static/js/runtime-main.2c726318.js",
+    "runtime-main.js.map": "/money-trace-website/static/js/runtime-main.2c726318.js.map",
+    "static/js/2.5cc50e4f.chunk.js": "/money-trace-website/static/js/2.5cc50e4f.chunk.js",
+    "static/js/2.5cc50e4f.chunk.js.map": "/money-trace-website/static/js/2.5cc50e4f.chunk.js.map",
+    "index.html": "/money-trace-website/index.html",
+    "precache-manifest.6ab85dcc6d9cae9c1eca6cee6e1e62a8.js": "/money-trace-website/precache-manifest.6ab85dcc6d9cae9c1eca6cee6e1e62a8.js",
+    "service-worker.js": "/money-trace-website/service-worker.js",
+    "static/css/main.7b3a3e77.chunk.css.map": "/money-trace-website/static/css/main.7b3a3e77.chunk.css.map",
+    "static/js/2.5cc50e4f.chunk.js.LICENSE.txt": "/money-trace-website/static/js/2.5cc50e4f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c726318.js",
+    "static/js/2.5cc50e4f.chunk.js",
+    "static/css/main.7b3a3e77.chunk.css",
+    "static/js/main.29e9aff4.chunk.js"
+  ]
+}

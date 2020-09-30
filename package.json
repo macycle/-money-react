@@ -1,6 +1,7 @@
 {
   "name": "money-r",
   "version": "0.1.0",
+  "homepage": "https://macycle.github.io/money-trace-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
@@ -60,6 +61,7 @@
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
     "semver": "6.3.0",
+    "serve": "^11.3.2",
     "style-loader": "0.23.1",
     "styled-components": "5.0.1",
     "svg-sprite-loader": "^5.0.0",
